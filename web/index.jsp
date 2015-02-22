@@ -23,8 +23,7 @@
 </header>
 
 <form action="/SudokuServ" method="post">
-			<textarea rows=18 cols=34 name="sudoku">
-			</textarea>
+			<textarea rows=18 cols=34 name="sudoku"></textarea>
   <input type="submit" value="Решить">
 </form>
 
