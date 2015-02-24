@@ -5,7 +5,7 @@
   Time: 10:16
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <html>
 <head>
 
@@ -23,8 +23,7 @@
 </header>
 
 <form action="/SudokuServ" method="post">
-			<textarea rows=18 cols=34 name="sudoku">
-			</textarea>
+			<textarea rows=18 cols=34 name="sudoku"></textarea>
   <input type="submit" value="Решить">
 </form>
 

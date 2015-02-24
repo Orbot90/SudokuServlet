@@ -24,8 +24,10 @@ public class SudokuServlet extends HttpServlet {
         temp = temp.replaceAll("\t", "");
         String SudString[] = temp.split("\r\n");
 
+        resp.setContentType("text/html");
 
-        PrintWriter pw = resp.getWriter();
+
+//        PrintWriter pw = resp.getWriter();
 
         int count = 0;
         int[][] sudoku = new int[9][9];
@@ -33,25 +35,42 @@ public class SudokuServlet extends HttpServlet {
         while(count < 9) {
             String s = SudString[count];
             String[] sArr = s.split(" ");
+
             for(int i = 0; i < 9; i++) {
-                sudoku[count][i] = Integer.parseInt(sArr[i]);
+                try {
+                    sudoku[count][i] = Integer.parseInt(sArr[i]);
+                } catch (Exception e) {
+                    resp.sendRedirect("/error.jsp");
+                    return;
+                }
             }
             count++;
         }
 
-        String[] answer = new String[9];
+        String[] ans = null;
 
         try {
-            answer =  WiseSolver.doSolve(sudoku);
-        } catch (CloneNotSupportedException e) {
+            ans =  WiseSolver.doSolve(sudoku);
+        } catch (Exception e) {
+            resp.sendRedirect("/error.jsp");
+            return;
+        }
 
-        }
-        pw.println("The answer is:");
-        pw.println();
-        pw.println();
+
+        req.setAttribute("answer", ans);
+
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/answer.jsp");
+        rd.forward(req, resp);
+        return;
+
+ /*       pw.println("<html><body>");
+        pw.println("The answer is: <br /> <br />");
+        pw.println("<code>");
         for(String s : answer) {
-            pw.println(s);
+            pw.println(s + "<br />");
         }
-        pw.close();
+        pw.println("</code>");
+        pw.println("</body></html>");
+        pw.close(); */
     }
 }

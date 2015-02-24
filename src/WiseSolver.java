@@ -26,21 +26,10 @@ public class WiseSolver {
             answer[i] = "";
         }
 
-
         initSudoku(sudoku);
-
-        System.out.println();
-        System.out.println();
-        System.out.println();
-
-        printGetSudoku();
 
         solve();
 
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        printGetSudoku();
 
         if(isSolved) {
 
@@ -157,19 +146,6 @@ public class WiseSolver {
                 }
             }
         return false;
-    }
-
-    public static void printGetSudoku() {
-        System.out.println();
-        for(int i = 0; i < 9; i++) {
-            if(i == 3 || i == 6) System.out.println("|_*_||_*_||_*_||_*_||_*_||_*_||_*_||_*_||_*_||_*_||_*_|");
-            for(int j = 0; j < 9; j++) {
-                if(j == 3 || j == 6)
-                    System.out.print("|_*_|");
-                System.out.print("|_" + ((sudokuArr[i][j].getValue() instanceof Integer) ? sudokuArr[i][j].getValue() : "_") + "_|");
-            }
-            System.out.println();
-        }
     }
 
 
