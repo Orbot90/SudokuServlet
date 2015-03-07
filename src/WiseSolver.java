@@ -28,15 +28,8 @@ public class WiseSolver {
 
         initSudoku(sudoku);
 
-<<<<<<< HEAD
         solve();
 
-=======
-
-        solve();
-
-
->>>>>>> 65ea423eb5176d082e271e756d47f5bfdcd777ce
 
         if(isSolved) {
 
