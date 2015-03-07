@@ -46,7 +46,7 @@ public class SudokuServlet extends HttpServlet {
             try {
                 s = SudString[count];
             } catch (Exception e) {
-                resp.sendRedirect("/SudokuServlet/error.html");
+                resp.sendRedirect("/error.html");
                 return;
             }
             String[] sArr = s.split(" ");
