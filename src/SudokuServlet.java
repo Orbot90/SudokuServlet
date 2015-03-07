@@ -18,6 +18,15 @@ import java.io.PrintWriter;
 @WebServlet("/SudokuServ")
 public class SudokuServlet extends HttpServlet {
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String[] ans = {"Вы не ввели судоку для решения."};
+        req.setAttribute("answer", ans);
+
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/answer.jsp");
+        rd.forward(req, resp);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String temp = req.getParameter("sudoku");
@@ -33,14 +42,20 @@ public class SudokuServlet extends HttpServlet {
         int[][] sudoku = new int[9][9];
 
         while(count < 9) {
-            String s = SudString[count];
+            String s = "";
+            try {
+                s = SudString[count];
+            } catch (Exception e) {
+                resp.sendRedirect("/SudokuServlet/error.html");
+                return;
+            }
             String[] sArr = s.split(" ");
 
             for(int i = 0; i < 9; i++) {
                 try {
                     sudoku[count][i] = Integer.parseInt(sArr[i]);
                 } catch (Exception e) {
-                    resp.sendRedirect("/error.jsp");
+                    resp.sendRedirect("/error.html");
                     return;
                 }
             }
@@ -52,7 +67,7 @@ public class SudokuServlet extends HttpServlet {
         try {
             ans =  WiseSolver.doSolve(sudoku);
         } catch (Exception e) {
-            resp.sendRedirect("/error.jsp");
+            resp.sendRedirect("/error.html");
             return;
         }
 
