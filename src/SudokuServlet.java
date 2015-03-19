@@ -15,7 +15,7 @@ import java.io.PrintWriter;
  * To change this template use File | Settings | File Templates.
  */
 
-@WebServlet("/SudokuServ")
+@WebServlet("/answer")
 public class SudokuServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
