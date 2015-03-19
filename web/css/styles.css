@@ -1,0 +1,156 @@
+
+		.error {
+			color: red;
+
+			font-size: 20px;
+
+		}
+
+		h1 {
+		 color: #B50000;
+		 font-family: 'Playfair Display', serif;
+		 text-align: center;
+		}
+
+		body {
+		 margin: 0 auto;
+		 color:white;
+		 background: url("/assets/8c6f7dc9ef31.jpg");
+		 background-position:center;
+		 background-size: cover;
+		 font-family: 'Lato', sans-serif;		 		 
+		}
+
+
+		textarea {
+			font-size: 20px;
+		}
+
+
+
+
+		body p {		 
+		 text-align: center;
+		}
+		
+		
+		h1 {
+		 font-size: 40px;
+		}
+
+		a {
+		 color:white;
+		 text-align: left;
+ 		}
+
+ 		table {
+ 			background-color: white;
+ 			color: black;
+ 			margin: 0 auto;
+      		border-collapse: collapse;
+      		border: 3px solid black;
+    }
+
+    td {
+      width: 40px;
+      height: 40px;
+    }
+
+    td.third-vert {
+      border-right: 3px solid black;
+    }
+
+    tr.third-hor {
+      border-bottom: 3px solid black;
+    }
+
+    .chosen {
+      background-color: #fc6c85;
+    }
+
+    table {
+      text-align: center;
+      font-size: 30px;
+    }
+
+    table.sudoku {
+      float: left;
+    }
+
+    table.numbers {
+      float: left;
+      margin-left: 30px;
+    }
+
+    input {
+      float: left;
+      clear:both;
+    }
+
+    div.area {
+    	max-width: 40%;
+		margin: 0 auto;
+    }
+
+ 		@media (max-width: 1200px) and (min-width: 1037px) {
+ 			div.area {
+ 				max-width: 80%;
+ 				float: left;
+ 			}
+
+ 			table.sudoku {
+ 				left: 0;
+ 			}
+
+ 			table.numbers {
+ 				width: 50px;
+ 			}
+
+ 			input {
+ 				font-size: 25px;
+ 			}
+ 		}
+
+ 		@media (max-width: 1037px) and (min-width: 600px) {
+ 			div.area {
+ 				max-width: 80%;
+ 				float: left;
+ 			}
+
+ 			table.sudoku {
+
+ 			}
+
+ 			input {
+ 				font-size: 25px;
+ 			}
+ 		}
+
+		@media (max-width: 600px) {
+		div.area {
+			float: left;
+			max-width: 100%;
+		}
+
+		table.sudoku {
+			max-width: 75%;			
+		}
+
+		table.numbers {
+			max-width: 20%;
+		}
+
+		 h1 {
+		  font-size: 20px;
+		 }
+
+		 body {
+		 	font-size: 18px;
+		 }
+
+		 input {
+		 	font-size: 25px;
+		 }
+
+	 	
+		}
