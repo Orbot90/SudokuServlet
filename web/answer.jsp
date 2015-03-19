@@ -11,15 +11,23 @@
 <html>
 <head>
     <title>Ваш ответ</title>
+
+    <link rel="stylesheet" href="css/answer.css">
+    <a href="/SudokuServlet/">Решить ещё судоку</a> <br />
+    <a href="/">На главную</a>
 </head>
 <body>
+<h1>Ваш ответ:</h1>
 
 <%String[] answer = (String[])request.getAttribute("answer");%>
-
+<div>
 <code>
+<span>
   <%for(String s : answer) {%>
   <%=s%> <br />
   <%}%>
+  </span>
 </code>
+</div>
 </body>
 </html>
