@@ -17,14 +17,6 @@ import java.io.PrintWriter;
 
 @WebServlet("/answer")
 public class SudokuServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String ans = "";
-        req.setAttribute("answer", ans);
-
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/answer.jsp");
-        rd.forward(req, resp);
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
