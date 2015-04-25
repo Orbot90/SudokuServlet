@@ -19,7 +19,7 @@ import java.io.PrintWriter;
 public class SudokuServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String[] ans = {"Вы не ввели судоку для решения."};
+        String ans = "";
         req.setAttribute("answer", ans);
 
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/answer.jsp");
@@ -33,59 +33,45 @@ public class SudokuServlet extends HttpServlet {
         temp = temp.replaceAll("\t", "");
         String SudString[] = temp.split("\r\n");
 
-        resp.setContentType("text/html");
+        resp.setContentType("text/plain");
 
 
-//        PrintWriter pw = resp.getWriter();
+        PrintWriter pw = resp.getWriter();
 
         int count = 0;
         int[][] sudoku = new int[9][9];
 
         while(count < 9) {
             String s = "";
-            try {
-                s = SudString[count];
-            } catch (Exception e) {
-                resp.sendRedirect("/SudokuServlet/error.html");
-                return;
-            }
+            s = SudString[count];
             String[] sArr = s.split(" ");
 
             for(int i = 0; i < 9; i++) {
-                try {
-                    sudoku[count][i] = Integer.parseInt(sArr[i]);
-                } catch (Exception e) {
-                    resp.sendRedirect("/error.html");
-                    return;
-                }
+                sudoku[count][i] = Integer.parseInt(sArr[i]);
             }
             count++;
         }
 
-        String[] ans = null;
+        String ans = "";
 
         try {
             ans =  WiseSolver.doSolve(sudoku);
         } catch (Exception e) {
-            resp.sendRedirect("/error.html");
-            return;
+            ans = "999";
         }
 
 
         req.setAttribute("answer", ans);
 
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/answer.jsp");
+ /*       RequestDispatcher rd = getServletContext().getRequestDispatcher("/answer.jsp");
         rd.forward(req, resp);
-        return;
+        return; */
 
- /*       pw.println("<html><body>");
-        pw.println("The answer is: <br /> <br />");
-        pw.println("<code>");
-        for(String s : answer) {
-            pw.println(s + "<br />");
-        }
-        pw.println("</code>");
-        pw.println("</body></html>");
-        pw.close(); */
+
+
+
+        pw.println(ans);
+
+        pw.close();
     }
 }

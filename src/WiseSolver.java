@@ -14,17 +14,17 @@ public class WiseSolver {
     static boolean isSolved;
     static String ls = System.getProperty("line.separator");
     static Stack<Cell[][]> backUpStack = new Stack<Cell[][]>();
-    static boolean sameNumbers = false;
-    static String[] answer;
+    static boolean sameNumbers;
+    static String answer;
 
 
-    static String[] doSolve(int[][] sudoku) throws IOException, CloneNotSupportedException {
+    static String doSolve(int[][] sudoku) throws IOException, CloneNotSupportedException {
+        backUpStack = new Stack<Cell[][]>();
+        sameNumbers = false;
 
         sudokuArr = new Cell[9][9];
-        answer = new String[11];
-        for(int i = 0; i < 11; i++) {
-            answer[i] = "";
-        }
+        answer = "";
+
 
         initSudoku(sudoku);
 
@@ -34,7 +34,7 @@ public class WiseSolver {
         if(isSolved) {
 
             printSudoku();
-        }   else answer[0] = "Not Solved :(";
+        }   else answer = "999";
         return answer;
     }
 
@@ -53,15 +53,8 @@ public class WiseSolver {
     public static void printSudoku() {
 
         for(int i = 0, k = 0; i < 9; i++, k++) {
-            if(i == 3 || i == 6) {
-                answer[k] = "|_*_||_*_||_*_||_*_||_*_||_*_||_*_||_*_||_*_||_*_||_*_|";
-                k++;
-            }
-
             for(int j = 0; j < 9; j++) {
-                if(j == 3 || j == 6)
-                    answer[k] += "|_*_|";
-                answer[k] += "|_" + ((sudokuArr[i][j].getValue() instanceof Integer) ? sudokuArr[i][j].getValue() : "_") + "_|";
+                answer += ((sudokuArr[i][j].getValue() instanceof Integer) ? sudokuArr[i][j].getValue() : "0") + " ";
             }
         }
 
