@@ -55,13 +55,6 @@ public class SudokuServlet extends HttpServlet {
 
         req.setAttribute("answer", ans);
 
- /*       RequestDispatcher rd = getServletContext().getRequestDispatcher("/answer.jsp");
-        rd.forward(req, resp);
-        return; */
-
-
-
-
         pw.println(ans);
 
         pw.close();
