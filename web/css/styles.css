@@ -1,149 +1,147 @@
 
-		.error {
-			color: red;
+.error {
+	color: red;
 
-			font-size: 20px;
+	font-size: 20px;
 
-		}
+}
 
-		h1 {
-		 color: #B50000;
-		 font-family: 'Playfair Display', serif;
-		 text-align: center;
-		}
+h1 {
+	color: #B50000;
+	font-family: 'Playfair Display', serif;
+	text-align: center;
+}
 
-		body {
-		 margin: 0 auto;
-		 color:white;
-		 background: url("/assets/8c6f7dc9ef31.jpg");
-		 background-position:center;
-		 background-size: cover;
-		 font-family: 'Lato', sans-serif;		 		 
-		}
+body {
+	margin: 0 auto;
+	color:white;
+	background: url("/assets/8c6f7dc9ef31.jpg");
+	background-position:top;
+	background-attachment: fixed;
+	font-family: 'Lato', sans-serif;
+}
 
 
-		body p {		 
-		 text-align: center;
-		}
-		
-		
-		h1 {
-		 font-size: 40px;
-		}
+body p {
+	text-align: center;
+}
 
-		a {
-		 color:white;
-		 text-align: left;
- 		}
 
- 		table {
- 			background-color: white;
- 			color: black;
- 			margin: 0 auto;
-      		border-collapse: collapse;
-      		border: 3px solid black;
-    }
+h1 {
+	font-size: 40px;
+}
 
-    td {
-      width: 40px;
-      height: 40px;
-    }
+a {
+	color:white;
+	text-align: left;
+}
 
-    td.third-vert {
-      border-right: 3px solid black;
-    }
+table {
+	background-color: white;
+	color: black;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: 3px solid black;
+}
 
-    tr.third-hor {
-      border-bottom: 3px solid black;
-    }
+td {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
 
-    .chosen {
-      background-color: #fc6c85;
-    }
+td.third-vert {
+	border-right: 3px solid black;
+}
 
-    table {
-      text-align: center;
-      font-size: 30px;
-    }
+tr.third-hor {
+	border-bottom: 3px solid black;
+}
 
-    table.sudoku {
-      float: left;
-    }
+.chosen {
+	background-color: #fc6c85;
+}
 
-    table.numbers {
-      float: left;
-      margin-left: 30px;
-    }
+table {
+	text-align: center;
+	font-size: 30px;
+}
 
-    input {
-      float: left;
-      clear:both;
-    }
+table.sudoku {
+	float: left;
+}
 
-    div.area {
-    	max-width: 40%;
-		margin: 0 auto;
-    }
+table.numbers {
+	float: left;
+	margin-left: 30px;
+}
 
- 		@media (max-width: 1200px) and (min-width: 1037px) {
- 			div.area {
- 				max-width: 80%;
- 				float: left;
- 			}
+.buttons {
+	float: left;
+	clear:both;
+}
 
- 			table.sudoku {
- 				left: 0;
- 			}
+div.area {
+	max-width: 40%;
+	margin: 0 auto;
+}
 
- 			table.numbers {
- 				width: 50px;
- 			}
+@media (max-width: 1200px) and (min-width: 1037px) {
+	div.area {
+		max-width: 80%;
+		float: left;
+	}
 
- 			input {
- 				font-size: 25px;
- 			}
- 		}
+	table.sudoku {
+		left: 0;
+	}
 
- 		@media (max-width: 1037px) and (min-width: 600px) {
- 			div.area {
- 				max-width: 80%;
- 				float: left;
- 			}
+	table.numbers {
+		width: 50px;
+	}
 
- 			table.sudoku {
+	.buttons {
+		font-size: 25px;
+	}
+}
 
- 			}
+@media (max-width: 1037px) and (min-width: 600px) {
+	div.area {
+		max-width: 80%;
+		float: left;
+	}
 
- 			input {
- 				font-size: 25px;
- 			}
- 		}
 
-		@media (max-width: 600px) {
-		div.area {
-			float: left;
-			max-width: 100%;
-		}
+	.buttons {
+		font-size: 25px;
+	}
+}
 
-		table.sudoku {
-			max-width: 75%;			
-		}
+@media (max-width: 600px) {
+	div.area {
+		float: left;
+		max-width: 100%;
+	}
 
-		table.numbers {
-			max-width: 20%;
-		}
+	table.sudoku {
+		max-width: 75%;
+	}
 
-		 h1 {
-		  font-size: 20px;
-		 }
+	table.numbers {
+		max-width: 20%;
+	}
 
-		 body {
-		 	font-size: 18px;
-		 }
+	h1 {
+		font-size: 20px;
+	}
 
-		 input {
-		 	font-size: 25px;
-		 }
+	body {
+		font-size: 18px;
+	}
 
-	 	
-		}
+	.buttons {
+		font-size: 25px;
+	}
+
+
+}
